@@ -14,7 +14,7 @@ import java.util.List;
 public class Overview extends AppCompatActivity {
 
     private List<String> mSampleQuoteList;
-    private List<recipes> mQuoteList = new ArrayList<>();
+    private List<create_recipe> mQuoteList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class Overview extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Overview.this, recipes.class));
+                startActivity(new Intent(Overview.this, create_recipe.class));
             }
         });
     }
