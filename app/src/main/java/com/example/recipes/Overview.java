@@ -31,11 +31,18 @@ public class Overview extends AppCompatActivity {
 
 
         Button btn = (Button)findViewById(R.id.button_activity_main);
+        Button btn_login = (Button)findViewById(R.id.login_button);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Overview.this, create_recipe.class));
+            }
+        });
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Overview.this, SettingsActivity.class));
             }
         });
     }

@@ -10,11 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
             android:name=".RecipeViewer"
             android:exported="false" />
         <activity
             android:name=".create_recipe"
-            android:label="@string/title_activity_recipe"></activity>
+            android:label="@string/title_activity_recipe" />
         <activity
             android:name=".Overview"
             android:launchMode="singleTop">
