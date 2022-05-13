@@ -19,6 +19,10 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="firstName">Tim</string>
+    <string name="lastName">Maelzer</string>
+    <string name="email">tim.maelzer@kitchen.com</string>
+    <string name="password">*******</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.recipes.ui.login.LoginActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,7 @@ public class Overview extends AppCompatActivity {
 
         Button btn = (Button)findViewById(R.id.button_activity_main);
         Button btn_login = (Button)findViewById(R.id.login_button);
+        Button btn_settings = (Button)findViewById(R.id.settings_button);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +43,13 @@ public class Overview extends AppCompatActivity {
             }
         });
         btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Overview.this, LoginActivity.class));
+            }
+        });
+
+        btn_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Overview.this, SettingsActivity.class));
