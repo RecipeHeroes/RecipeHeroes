@@ -13,7 +13,7 @@ public class create_recipe extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_dashboard);
+        setContentView(R.layout.create_recipe);
     }
     public create_recipe saveRecipe(String name, String author){
         this.author = author;

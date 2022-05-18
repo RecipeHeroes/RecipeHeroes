@@ -23,6 +23,56 @@
     <string name="lastName">Maelzer</string>
     <string name="email">tim.maelzer@kitchen.com</string>
     <string name="password">*******</string>
+    <string name="register">Register</string>
+
+    <!-- Texts and Helpers for activity_main -->
+    <string name="createRecipeButton">Neues Rezept anlegen</string>
+
+    <!-- Texts and Helpers for Create recipe -->
+    <string name="recipenamehint">Rezeptname</string>
+    <string name="recipeCategoriesText">Kategorie</string>
+    <string-array name="recipeCategories">
+        <item>Vegetarisch</item>
+        <item>Vegan</item>
+        <item>Fleisch</item>
+        <item>Fisch</item>
+        <item>Dessert</item>
+        <item>Drinks</item>
+        <item>Others</item>
+    </string-array>
+    <string name="numberOfPersonsText">Anzahl Personen</string>
+    <string-array name="numberOfPersons">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string name="recipeInstructionsText">Rezeptanleitung</string>
+    <string name="cookingDurationText">Dauer</string>
+    <string-array name="cookingDuration">
+        <item>0,25h</item>
+        <item>0,5h</item>
+        <item>1h</item>
+        <item>2h</item>
+        <item>3h</item>
+        <item>4h</item>
+        <item>5h</item>
+        <item>6h</item>
+        <item>7h</item>
+        <item>8h</item>
+    </string-array>
+    <string name="cookingLevelText">Schwierigkeitslevel</string>
+    <string-array name="cookingLevel">
+        <item>easy</item>
+        <item>machbar</item>
+        <item>challenge</item>
+    </string-array>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

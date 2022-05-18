@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,7 +23,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.recipes.Overview;
 import com.example.recipes.R;
+import com.example.recipes.RegisterActivity;
+import com.example.recipes.SettingsActivity;
 import com.example.recipes.ui.login.LoginViewModel;
 import com.example.recipes.ui.login.LoginViewModelFactory;
 import com.example.recipes.databinding.ActivityLoginBinding;
@@ -120,6 +124,14 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+            }
+        });
+
+        Button btn_register = (Button)findViewById(R.id.register_button);
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
     }
