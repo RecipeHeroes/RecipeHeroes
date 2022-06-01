@@ -14,6 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/recipe_name"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:hint="@string/recipenamehint" />
@@ -76,8 +77,16 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="343dp"
-            android:layout_height="109dp"
+            android:layout_height="66dp"
             android:hint="@string/recipeInstructionsText" />
+
+        <Button
+            android:id="@+id/create_recipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="saveRecipe2"
+            android:text="Button" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
