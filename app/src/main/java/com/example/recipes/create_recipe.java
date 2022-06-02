@@ -2,14 +2,11 @@ package com.example.recipes;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Spinner;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,23 +19,20 @@ import com.codepath.asynchttpclient.callback.TextHttpResponseHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-
 import okhttp3.Headers;
 import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import okio.BufferedSink;
-import okio.BufferedSource;
-import okio.ByteString;
-import okio.Okio;
 
 public class create_recipe extends AppCompatActivity {
 
-    private int count;
-    private String name;
-    private String author;
     public static Context c;
+    private int ID;
+    private String Title;
+    private String Description;
+    private int Difficulty;
+    private int DurationMinutes;
+    private int Portions;
+    private String Author_Email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +41,7 @@ public class create_recipe extends AppCompatActivity {
         setContentView(R.layout.create_recipe);
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("http://10.0.2.2:4004/recipe-heroes/Recipe", new TextHttpResponseHandler() {
+
             @Override
             public void onSuccess(int statusCode, Headers headers, String response) {
                 Log.d("DEBUG", response);
@@ -59,8 +54,18 @@ public class create_recipe extends AppCompatActivity {
         });
     }
 
+    public void setRecipe(){
+        this.Title = ((EditText)findViewById(R.id.recipe_name)).getText().toString();
+//        this.Author_Email = ((EditText)findViewById(R.id.recipe_name)).getText().toString();
+        this.Description = ((EditText)findViewById(R.id.description)).getText().toString();
+//        this.Difficulty = Integer.valueOf(String.valueOf(findViewById(R.id.difficulty)));
+//        this.DurationMinutes = Integer.valueOf(((EditText)findViewById(R.id.duration)).getText().toString());
+//        this.Portions = Integer.valueOf(((Spinner) findViewById(R.id.portions)).toString());
+    }
+
     public void saveRecipe2(View v) throws JSONException {
 //        Toast.makeText(create_recipe.c, "Clicked on Button", Toast.LENGTH_LONG).show();
+        this.setRecipe();
         AsyncHttpClient client = new AsyncHttpClient();
         RequestHeaders requestHeaders = new RequestHeaders();
         RequestParams params = new RequestParams();
@@ -68,10 +73,11 @@ public class create_recipe extends AppCompatActivity {
 
 // Create JSON to send to backend
         JSONObject jsonObject = new JSONObject()
-        // To do getter und setter schreiben
-                .put("Title", ( (EditText) this.findViewById(R.id.recipe_name)).getText())
-                .put("Difficulty", 2)
-                .put("DurationMinutes", 20);
+                .put("Title", this.Title)
+                .put("Difficulty", this.Difficulty)
+                .put("DurationMinutes", this.DurationMinutes)
+                .put("Description", this.Description)
+                .put("Portions", this.Portions);
 
         RequestBody requestBody = RequestBody.create(String.valueOf(jsonObject), mt);
 
@@ -87,14 +93,4 @@ public class create_recipe extends AppCompatActivity {
             }
         });
     }
-
-    public String getAuthor(){
-        return this.author;
-    }
-
-    public String getName(){
-        return this.name;
-    }
-
-
 }

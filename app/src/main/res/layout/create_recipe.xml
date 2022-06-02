@@ -50,14 +50,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/numberOfPersonsText"
-        app:layout_constraintBottom_toTopOf="@+id/recipeCategory_spinner2"
+        app:layout_constraintBottom_toTopOf="@+id/portions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipeCategory_spinner" />
 
     <Spinner
-        android:id="@+id/recipeCategory_spinner2"
+        android:id="@+id/portions"
         android:layout_width="287dp"
         android:layout_height="48dp"
         android:layout_marginTop="40dp"
@@ -76,6 +76,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/description"
             android:layout_width="343dp"
             android:layout_height="66dp"
             android:hint="@string/recipeInstructionsText" />
@@ -98,10 +99,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipeCategory_spinner2" />
+        app:layout_constraintTop_toBottomOf="@+id/portions" />
 
     <Spinner
-        android:id="@+id/cookingDurationSpinner"
+        android:id="@+id/duration"
         android:layout_width="287dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
@@ -111,7 +112,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cookingDurationText" />
 
     <Spinner
-        android:id="@+id/cookingDurationSpinner2"
+        android:id="@+id/difficulty"
         android:layout_width="287dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -131,6 +132,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cookingDurationSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/duration" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
