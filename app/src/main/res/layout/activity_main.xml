@@ -7,17 +7,10 @@
 
     <TextView
         android:id="@+id/textview_activity_main"
-        android:layout_width="172dp"
+        android:layout_width="337dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/default_margin"
         android:text="@string/welcome_message"
-        android:textSize="@dimen/default_font_size" />
-
-    <Button
-        android:id="@+id/button_activity_main"
-        android:layout_width="121dp"
-        android:layout_height="38dp"
-        android:text="@string/text_button_activity_main"
         android:textSize="@dimen/default_font_size" />
 
     <SearchView
@@ -47,5 +40,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/createRecipeButton" />
+
+    <Button
+        android:id="@+id/recipelist_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recipe List" />
+
+    <Button
+        android:id="@+id/Testbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
 </LinearLayout>

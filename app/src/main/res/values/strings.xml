@@ -25,8 +25,8 @@
     <string name="password">*******</string>
     <string name="register">Register</string>
 
-    <!-- Texts and Helpers for activity_main -->
-    <string name="createRecipeButton">Neues Rezept anlegen</string>
+    <!-- Texts and Helpers for activity_mzept anlegenain -->
+    <string name="createRecipeButton">Create Recipe</string>
 
     <!-- Texts and Helpers for Create recipe -->
     <string name="recipenamehint">Rezeptname</string>

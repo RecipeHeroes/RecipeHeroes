@@ -1,6 +1,7 @@
 package com.example.recipes;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,16 +33,19 @@ public class Overview extends AppCompatActivity {
         Log.e(logTag, "Error       - Meldung.");
 
 
-        Button btn = (Button)findViewById(R.id.button_activity_main);
+//        Button btn = (Button)findViewById(R.id.button_activity_main);
         Button btn_login = (Button)findViewById(R.id.login_button);
         Button btn_settings = (Button)findViewById(R.id.settings_button);
+        Button btn_recipelist = (Button)findViewById(R.id.recipelist_button);
+        Button btn_test = (Button)findViewById(R.id.Testbutton);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        btn_recipelist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Overview.this, create_recipe.class));
+                startActivity(new Intent(Overview.this, RecipeList.class));
             }
         });
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +74,14 @@ public class Overview extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Overview.this, create_recipe.class));
+            }
+        });
+        btn_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent recipe = new Intent(Overview.this, show_one_recipe2.class);
+                    recipe.putExtra("id", "00000001-0000-0000-0000-000000000002");
+                startActivity(recipe);
             }
         });
     }
