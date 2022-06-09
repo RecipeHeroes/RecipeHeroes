@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Recipes</string>
-    <string name="welcome_message">Was möchten Sie kochen?</string>
-    <string name="text_button_activity_main">Rezept speichern</string>
+    <string name="welcome_message">What would you like to eat today?</string>
+    <string name="text_button_activity_main">Save recipe</string>
     <string name="title_activity_recipe_enter">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
