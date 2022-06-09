@@ -34,7 +34,7 @@ public class RecipeList extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://10.0.2.2:4004/recipe-heroes/Recipe";
+        String url = "http://10.0.2.2:4004/recipe-heroes/Recipe?$expand=Author";
         client.get(url, new JsonHttpResponseHandler() {
 
             @Override
@@ -45,11 +45,15 @@ public class RecipeList extends AppCompatActivity {
                     JSONArray jsonArray = json.jsonObject.getJSONArray("value");
                     for(int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject((i));
-                        testValues.add(new RecipeListItem(
-                                jsonObject.getString("ID"),
-                                jsonObject.getString("Title"),
-                                "2022-06-07")
-                        );
+                        RecipeListItem listItem = new RecipeListItem();
+                        listItem.id = jsonObject.getString("ID");
+                        listItem.author = jsonObject.getJSONObject("Author").getString("Username");
+                        listItem.date = "2022-06-07";
+                        listItem.title = jsonObject.getString("Title");
+                        listItem.difficulty = jsonObject.getInt("Difficulty");
+                        listItem.durationMinutes = jsonObject.getInt("DurationMinutes");
+                        listItem.portionPersons = jsonObject.getInt("Portions");
+                        testValues.add(listItem);
                     }
 
                     RecipeAdapter recipeAdapter = new RecipeAdapter(testValues);
