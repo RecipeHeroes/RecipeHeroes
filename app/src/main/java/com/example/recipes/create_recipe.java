@@ -38,7 +38,10 @@ public class create_recipe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         create_recipe.c = this;
         super.onCreate(savedInstanceState);
+        // set create_recipe Screen
         setContentView(R.layout.create_recipe);
+
+        // get client
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("http://10.0.2.2:4004/recipe-heroes/Recipe", new TextHttpResponseHandler() {
 
@@ -56,22 +59,18 @@ public class create_recipe extends AppCompatActivity {
 
     public void setRecipe(){
         this.Title = ((EditText)findViewById(R.id.recipe_name)).getText().toString();
-//        this.Author_Email = ((EditText)findViewById(R.id.recipe_name)).getText().toString();
         this.Description = ((EditText)findViewById(R.id.description)).getText().toString();
-//        this.Difficulty = Integer.valueOf(String.valueOf(findViewById(R.id.difficulty)));
-//        this.DurationMinutes = Integer.valueOf(((EditText)findViewById(R.id.duration)).getText().toString());
-//        this.Portions = Integer.valueOf(((Spinner) findViewById(R.id.portions)).toString());
     }
 
-    public void saveRecipe2(View v) throws JSONException {
-//        Toast.makeText(create_recipe.c, "Clicked on Button", Toast.LENGTH_LONG).show();
+    public void save_recipe(View v) throws JSONException {
+        // set recipe variables
         this.setRecipe();
         AsyncHttpClient client = new AsyncHttpClient();
         RequestHeaders requestHeaders = new RequestHeaders();
         RequestParams params = new RequestParams();
         MediaType mt = MediaType.parse("application/json; charset=utf-8");
 
-// Create JSON to send to backend
+        // Create JSON to send to backend
         JSONObject jsonObject = new JSONObject()
                 .put("Title", this.Title)
                 .put("Difficulty", this.Difficulty)

@@ -10,21 +10,20 @@ import android.widget.TextView;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
-import com.codepath.asynchttpclient.callback.TextHttpResponseHandler;
 
 import org.json.JSONException;
 
 import okhttp3.Headers;
 
-public class show_one_recipe2 extends AppCompatActivity {
+public class show_one_recipe extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_one_recipe2);
+        setContentView(R.layout.activity_show_one_recipe);
 
         String id = this.getIntent().getExtras().getString("id");
-
+        // get Client
         AsyncHttpClient client = new AsyncHttpClient();
         String url = "http://10.0.2.2:4004/recipe-heroes/Recipe("+id+")";
 

@@ -30,6 +30,7 @@ public class RecipeList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_list);
 
+        // create Recycler View with recipe items
         RecyclerView recyclerView = findViewById(R.id.recipe_items);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -41,7 +42,7 @@ public class RecipeList extends AppCompatActivity {
             public void onSuccess(int statusCode, Headers headers, JSON json) {
                 try {
                     ArrayList<RecipeListItem> testValues = new ArrayList<RecipeListItem>();
-
+                    // create ArrayList from json
                     JSONArray jsonArray = json.jsonObject.getJSONArray("value");
                     for(int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject((i));

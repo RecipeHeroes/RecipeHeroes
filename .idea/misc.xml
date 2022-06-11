@@ -30,9 +30,11 @@
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1785" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/drawable/side_nav_bar.xml" value="0.34" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/drawable/soup_background.xml" value="0.1165" />
+        <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.23293172690763053" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.23560910307898258" />
+        <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout-w936dp/activity_login.xml" value="0.271875" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/activity_login.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/activity_navigation_drawe.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/activity_navigation_drawer.xml" value="0.2859375" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/activity_recipe_list.xml" value="0.25104166666666666" />
@@ -49,8 +51,12 @@
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/fragment_dashboard.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/fragment_gallery.xml" value="0.2859375" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/fragment_home.xml" value="0.2859375" />
+        <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/fragment_notifications.xml" value="0.3625" />
+        <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/fragment_profile.xml" value="0.3067708333333333" />
+        <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/fragment_settings.xml" value="0.3067708333333333" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/fragment_slideshow.xml" value="0.2859375" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/nav_header_navigation_drawer.xml" value="0.2859375" />
+        <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/recipe_card.xml" value="0.3067708333333333" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/layout/settings_activity.xml" value="0.13269927536231885" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/I552346/StudioProjects/RecipeHeroes/app/src/main/res/menu/menu_show_onerecipe.xml" value="0.25104166666666666" />

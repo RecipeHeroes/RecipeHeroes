@@ -40,52 +40,16 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //set View activity_login
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        setContentView(R.layout.activity_login);
 
-        loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
-                .get(LoginViewModel.class);
-
-        final EditText usernameEditText = binding.username;
-        final EditText passwordEditText = binding.password;
-        final Button loginButton = binding.login;
+        //get button, password and username variables from screen
+        final EditText usernameEditText = (EditText) findViewById(R.id.username);
+        final EditText passwordEditText = (EditText) findViewById(R.id.password);
+        final Button loginButton = (Button) findViewById(R.id.login);
         final ProgressBar loadingProgressBar = binding.loading;
-
-        loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
-            @Override
-            public void onChanged(@Nullable LoginFormState loginFormState) {
-                if (loginFormState == null) {
-                    return;
-                }
-                loginButton.setEnabled(loginFormState.isDataValid());
-                if (loginFormState.getUsernameError() != null) {
-                    usernameEditText.setError(getString(loginFormState.getUsernameError()));
-                }
-                if (loginFormState.getPasswordError() != null) {
-                    passwordEditText.setError(getString(loginFormState.getPasswordError()));
-                }
-            }
-        });
-
-        loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
-            @Override
-            public void onChanged(@Nullable LoginResult loginResult) {
-                if (loginResult == null) {
-                    return;
-                }
-                loadingProgressBar.setVisibility(View.GONE);
-                if (loginResult.getError() != null) {
-                    showLoginFailed(loginResult.getError());
-                }
-                if (loginResult.getSuccess() != null) {
-                    updateUiWithUser(loginResult.getSuccess());
-                }
-                setResult(Activity.RESULT_OK);
-
-                //Complete and destroy login activity once successful
-                finish();
-            }
-        });
 
         TextWatcher afterTextChangedListener = new TextWatcher() {
             @Override
@@ -98,14 +62,45 @@ public class LoginActivity extends AppCompatActivity {
                 // ignore
             }
 
+            // Check, wether username and password follow restrictions for length and email @ sign
+            // Because username must be an email address
+            // And if not display error message
             @Override
             public void afterTextChanged(Editable s) {
-                loginViewModel.loginDataChanged(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                if (usernameEditText.getText().toString().contains("@") == false ) {
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                                Toast errorToast = Toast.makeText(LoginActivity.this, "Error, username must contain @", Toast.LENGTH_SHORT);
+                                errorToast.show();
+
+                        }
+                    });
+                }
+                if(usernameEditText.toString().isEmpty() == true){
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            Toast errorToast = Toast.makeText(LoginActivity.this, "Error, username must not be true", Toast.LENGTH_SHORT);
+                            errorToast.show();
+
+                        }
+                    });
+                }
+                if(passwordEditText.getText().toString().length() < 5){
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            Toast errorToast = Toast.makeText(LoginActivity.this, "Error, password must contain more than 5 characters", Toast.LENGTH_SHORT);
+                            errorToast.show();
+
+                        }
+                    });
+                }
             }
         };
+        // set afterTextChangedListener in Edit Text fields
         usernameEditText.addTextChangedListener(afterTextChangedListener);
         passwordEditText.addTextChangedListener(afterTextChangedListener);
+
+        // Create OnEditorActionListener for login password and username
         passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 
             @Override
@@ -117,32 +112,5 @@ public class LoginActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
-            }
-        });
-
-        Button btn_register = (Button)findViewById(R.id.register_button);
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-            }
-        });
-    }
-
-    private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
-    }
-
-    private void showLoginFailed(@StringRes Integer errorString) {
-        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
 }

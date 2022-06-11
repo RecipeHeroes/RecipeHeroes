@@ -16,13 +16,8 @@
             android:name=".RecipeList"
             android:exported="false" />
         <activity
-            android:name=".show_one_recipe2"
+            android:name=".show_one_recipe"
             android:exported="false" />
-        <activity
-            android:name=".show_onerecipe"
-            android:exported="false"
-            android:label="@string/title_activity_show_onerecipe"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
