@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,20 +22,20 @@ import okhttp3.Headers;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 
-public class create_recipe extends AppCompatActivity {
+public class Create_Recipe extends AppCompatActivity {
 
     public static Context c;
     private int ID;
-    private String Title;
-    private String Description;
     private int Difficulty;
     private int DurationMinutes;
     private int Portions;
+    private String Title;
+    private String Description;
     private String Author_Email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        create_recipe.c = this;
+        Create_Recipe.c = this;
         super.onCreate(savedInstanceState);
         // set create_recipe Screen
         setContentView(R.layout.create_recipe);
@@ -57,14 +56,14 @@ public class create_recipe extends AppCompatActivity {
         });
     }
 
-    public void setRecipe(){
+    public void setRecipeDate(){
         this.Title = ((EditText)findViewById(R.id.recipe_name)).getText().toString();
         this.Description = ((EditText)findViewById(R.id.description)).getText().toString();
     }
 
-    public void save_recipe(View v) throws JSONException {
+    public void saveRecipe(View v) throws JSONException {
         // set recipe variables
-        this.setRecipe();
+        this.setRecipeDate();
         AsyncHttpClient client = new AsyncHttpClient();
         RequestHeaders requestHeaders = new RequestHeaders();
         RequestParams params = new RequestParams();

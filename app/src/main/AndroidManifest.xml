@@ -16,13 +16,13 @@
             android:name=".RecipeList"
             android:exported="false" />
         <activity
-            android:name=".show_one_recipe"
+            android:name=".Show_SingleRecipe"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".Settings"
             android:exported="false"
             android:label="@string/title_activity_settings" />
         <activity
@@ -33,7 +33,7 @@
             android:name=".RecipeViewer"
             android:exported="false" />
         <activity
-            android:name=".create_recipe"
+            android:name=".Create_Recipe"
             android:label="@string/title_activity_recipe" />
         <activity
             android:name=".Overview"

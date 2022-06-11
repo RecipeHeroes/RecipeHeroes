@@ -1,21 +1,12 @@
 package com.example.recipes.ui.login;
 
-import android.app.Activity;
-
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
-import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,12 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.recipes.Overview;
 import com.example.recipes.R;
-import com.example.recipes.RegisterActivity;
-import com.example.recipes.SettingsActivity;
-import com.example.recipes.ui.login.LoginViewModel;
-import com.example.recipes.ui.login.LoginViewModelFactory;
 import com.example.recipes.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -46,10 +32,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //get button, password and username variables from screen
-        final EditText usernameEditText = (EditText) findViewById(R.id.username);
-        final EditText passwordEditText = (EditText) findViewById(R.id.password);
+        final EditText username = (EditText) findViewById(R.id.username);
+        final EditText password = (EditText) findViewById(R.id.password);
         final Button loginButton = (Button) findViewById(R.id.login);
-        final ProgressBar loadingProgressBar = binding.loading;
 
         TextWatcher afterTextChangedListener = new TextWatcher() {
             @Override
@@ -67,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             // And if not display error message
             @Override
             public void afterTextChanged(Editable s) {
-                if (usernameEditText.getText().toString().contains("@") == false ) {
+                if (username.getText().toString().contains("@") == false ) {
                     runOnUiThread(new Runnable() {
                         public void run() {
                                 Toast errorToast = Toast.makeText(LoginActivity.this, "Error, username must contain @", Toast.LENGTH_SHORT);
@@ -76,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
                 }
-                if(usernameEditText.toString().isEmpty() == true){
+                if(username.toString().isEmpty() == true){
                     runOnUiThread(new Runnable() {
                         public void run() {
                             Toast errorToast = Toast.makeText(LoginActivity.this, "Error, username must not be true", Toast.LENGTH_SHORT);
@@ -85,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
                 }
-                if(passwordEditText.getText().toString().length() < 5){
+                if(password.getText().toString().length() < 5){
                     runOnUiThread(new Runnable() {
                         public void run() {
                             Toast errorToast = Toast.makeText(LoginActivity.this, "Error, password must contain more than 5 characters", Toast.LENGTH_SHORT);
@@ -97,17 +82,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
         // set afterTextChangedListener in Edit Text fields
-        usernameEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.addTextChangedListener(afterTextChangedListener);
+        username.addTextChangedListener(afterTextChangedListener);
+        password.addTextChangedListener(afterTextChangedListener);
 
         // Create OnEditorActionListener for login password and username
-        passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    loginViewModel.login(usernameEditText.getText().toString(),
-                            passwordEditText.getText().toString());
+                    loginViewModel.login(username.getText().toString(),
+                            password.getText().toString());
                 }
                 return false;
             }

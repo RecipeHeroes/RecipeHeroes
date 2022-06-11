@@ -18,8 +18,8 @@ import java.util.List;
 
 public class Overview extends AppCompatActivity {
 
-    private List<String> mSampleQuoteList;
-    private List<create_recipe> mQuoteList = new ArrayList<>();
+//    private List<String> mSampleQuoteList;
+//    private List<Create_Recipe> mQuoteList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class Overview extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Overview.this, RegisterActivity.class));
+                startActivity(new Intent(Overview.this, Register.class));
             }
         });
 
@@ -63,7 +63,7 @@ public class Overview extends AppCompatActivity {
         btn_createRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Overview.this, create_recipe.class));
+                startActivity(new Intent(Overview.this, Create_Recipe.class));
             }
         });
 
@@ -78,7 +78,7 @@ public class Overview extends AppCompatActivity {
                                 break;
                             // Show Settings
                              case 2:
-                                 startActivity(new Intent(Overview.this, SettingsActivity.class));
+                                 startActivity(new Intent(Overview.this, Settings.class));
                                    }
                                 }
 

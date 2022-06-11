@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recipes.R;
 import com.example.recipes.entity.RecipeListItem;
-import com.example.recipes.show_one_recipe;
+import com.example.recipes.Show_SingleRecipe;
 import com.example.recipes.enums.Difficulty;
 
 import java.util.ArrayList;
@@ -64,7 +64,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(view.getContext(), show_one_recipe.class);
+                Intent intent = new Intent(view.getContext(), Show_SingleRecipe.class);
                 intent.putExtra("id", this.recipeID);
                 view.getContext().startActivity(intent);
 

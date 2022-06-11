@@ -15,7 +15,7 @@ import org.json.JSONException;
 
 import okhttp3.Headers;
 
-public class show_one_recipe extends AppCompatActivity {
+public class Show_SingleRecipe extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
