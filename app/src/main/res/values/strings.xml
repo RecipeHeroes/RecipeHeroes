@@ -74,8 +74,11 @@
         <item>challenge</item>
     </string-array>
 
-    <!-- Texts and Helpers for show_one_recipe2 -->
+    <!-- Texts and Helpers for show_one_recipe -->
     <string name="buttonSaveInCookbook">Rezept speichern</string>
+    <string name="textDescriptionAnzahl">Anzahl Personen</string>
+    <string name="textDifficulty">Schwierigkeitsgrad</string>
+    <string name="textDuration">Dauer in min</string>
 
     <string name="exampleTextForInstructions">
     Dieses Grundrezept kann je nach Lust und Laune durch Variieren des Fleisches (z. B. Hühnerbrust, Putenbrust, Rinderlende oder Schweinefilet) oder mit Fischfilet oder Garnelen und mit verschiedenem Gemüse (z. B. Bambussprossen in Streifen, Sojabohnenkeimlinge, Karotten, Babymais, Zuckerschoten, Thai-Auberginen, Pak Choi o. a.) zu immer neuem Genuss-Erlebnis führen. Lassen Sie Ihrer Kreativität freien Lauf! Es eignet sich auch für Vegetarier, da man es auch ausschließlich mit vielem verschiedenem Gemüse zubereiten kann.

@@ -51,6 +51,12 @@
                 android:stepSize="1"
                 tools:ignore="SpeakableTextPresentCheck" />
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/textDescriptionAnzahl" />
+
             <Spinner
                 android:id="@+id/portions_recipe"
                 android:layout_width="163dp"
@@ -59,10 +65,22 @@
                 android:minHeight="48dp" />
 
             <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/textDifficulty" />
+
+            <TextView
                 android:id="@+id/recipe_difficulty"
                 android:layout_width="122dp"
                 android:layout_height="wrap_content"
                 android:text="Level: machbar" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/textDuration" />
 
             <TextView
                 android:id="@+id/duration_recipeviewer"
