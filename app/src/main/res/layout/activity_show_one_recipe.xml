@@ -29,11 +29,21 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Red Curry with Tofu" />
+                android:text="Red Curry with Tofu"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/soup_foreground" />
 
             <RatingBar
                 android:id="@+id/recipe_ratingBar"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="false"
                 android:max="5"
@@ -71,7 +81,7 @@
                 android:layout_width="391dp"
                 android:layout_height="1000dp"
                 android:text="Dieses Grundrezept kann je nach Lust und Laune durch Variieren des Fleisches (z. B. Hühnerbrust, Putenbrust, Rinderlende oder Schweinefilet) oder mit Fischfilet oder Garnelen und mit verschiedenem Gemüse (z. B. Bambussprossen in Streifen, Sojabohnenkeimlinge, Karotten, Babymais, Zuckerschoten, Thai-Auberginen, Pak Choi o. a.) zu immer neuem Genuss-Erlebnis führen. Lassen Sie Ihrer Kreativität freien Lauf! Es eignet sich auch für Vegetarier, da man es auch ausschließlich mit vielem verschiedenem Gemüse zubereiten kann. Das Gericht muss nicht im Wok zubereitet werden, es geht genauso gut in einem breiten Topf, da es &quot;Suppencharakter&quot; hat. Die Currypaste im heißen Öl sautieren, kurz mit etwas Wasser ablöschen, nach und nach die Kokosmilch dazugeben und immer erst gut verrühren, bevor man mehr dazugibt (bringt eine sehr schöne rote Farbe). Das vorgesehene Fleisch (Fisch oder Garnelen) in mundgerechte Stücke schneiden, dazugeben und ca. 5 Minuten köcheln lassen, bis es gar ist. Garnelen brauchen nur sehr kurze Zeit! Das in Streifen geschnittene Gemüse der Wahl (egal welches und wie viele Sorten) dazugeben und alles wieder zum Kochen bringen. Alles sollte bissfest bleiben und die Farbe behalten (Pak Choi oder Chinakohl erst kurz vor Ende dazugeben). Mit der Fischsauce, der hellen Sojasauce und dem Palmzucker abschmecken. Thai-Basilikum-Blätter und Peperoni dazufügen, eine Minute weiterkochen. Nach Belieben und Schärfe-Empfinden die kleingeschnittenen Chili-Röllchen einstreuen. Das Gericht heiß mit Reis (Basmati, Jasminreis oder thailändischer Duftreis) servieren, als Variation kann man auch roten Reis aus dem Asialaden probieren."
-                android:textSize="8sp" />
+                android:textSize="14sp" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

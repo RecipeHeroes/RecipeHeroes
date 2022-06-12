@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ public class Show_SingleRecipe extends AppCompatActivity {
         setContentView(R.layout.activity_show_one_recipe);
 
         String id = this.getIntent().getExtras().getString("id");
+//        RatingBar ratingBar = findViewById(R.id.recipe_ratingBar);
         // get Client
         AsyncHttpClient client = new AsyncHttpClient();
         String url = "http://10.0.2.2:4004/recipe-heroes/Recipe("+id+")";
