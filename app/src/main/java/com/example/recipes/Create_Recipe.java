@@ -56,14 +56,14 @@ public class Create_Recipe extends AppCompatActivity {
         });
     }
 
-    public void setRecipeDate(){
+    public void setRecipeData(){
         this.Title = ((EditText)findViewById(R.id.recipe_name)).getText().toString();
         this.Description = ((EditText)findViewById(R.id.description)).getText().toString();
     }
 
     public void saveRecipe(View v) throws JSONException {
         // set recipe variables
-        this.setRecipeDate();
+        this.setRecipeData();
         AsyncHttpClient client = new AsyncHttpClient();
         RequestHeaders requestHeaders = new RequestHeaders();
         RequestParams params = new RequestParams();
